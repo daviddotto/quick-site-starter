@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head prefix="og: http://ogp.me/ns#">
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>
+			{% block pageTitle %}
+				Site name
+			{% endblock %}
+		</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script>(function (e) { e.className = e.className.replace('no-js', 'js'); }(document.documentElement));</script>
+		<!--[if lt IE 9]>
+		<script>
+			(function (d, a) {
+				d.documentElement.className = 'lt-ie9'; var l = a.length; while(l--){ d.createElement(a[l]); }
+			}(document, ['HEADER', 'NAV', 'SECTION', 'FOOTER', 'ARTICLE', 'MAIN', 'FIGCAPTION', 'FIGURE', 'ASIDE']));
+		</script>
+		<![endif]-->
+
+		{% include "includes/head.html" %}
+		
+	</head>
+	<body>
+
+		{% block header %}{% endblock %}
+		
+		<main id="content" role="main" tabindex="-1">
+			{% block content %}{% endblock %}
+		</main>
+		
+		{% block footer %}{% endblock %}
+		
+		{% block scripts %}
+			{% include "includes/scripts.html" %}
+			{% block pageScripts %}{% endblock %}
+		{% endblock %}
+
+	</body>
+</html>
