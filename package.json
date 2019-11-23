@@ -7,7 +7,7 @@
 		"test": "gulp test && run lint"
 	},
 	"dependencies": {
-		"airtable": "^0.7.1",
+		"airtable": "^0.7.2",
 		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.14.1",
 		"browser-sync": "^2.26.7",
