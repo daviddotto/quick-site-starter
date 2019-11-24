@@ -1,16 +1,8 @@
 // Core dependencies
 const path = require('path')
 
-// NPM dependencies
-const bodyParser = require('body-parser')
-const dotenv = require('dotenv')
-const express = require('express')
-const nunjucks = require('nunjucks')
-const sessionInCookie = require('client-sessions')
-const sessionInMemory = require('express-session')
-const cookieParser = require('cookie-parser')
-
 // Run before other code to make sure variables from .env are available
+const dotenv = require('dotenv')
 dotenv.config()
 
 // Local dependencies
@@ -20,6 +12,14 @@ const packageJson = require('./package.json')
 const routes = require('./app/routes.js')
 const utils = require('./lib/utils.js')
 const extensions = require('./lib/extensions/extensions.js')
+
+// NPM dependencies
+const bodyParser = require('body-parser')
+const express = require('express')
+const nunjucks = require('nunjucks')
+const sessionInCookie = require('client-sessions')
+const sessionInMemory = require('express-session')
+const cookieParser = require('cookie-parser')
 
 const app = express()
 
