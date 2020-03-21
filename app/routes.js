@@ -1,27 +1,14 @@
 const express = require('express')
-const router = express.Router()
+const router = express.Router(null)
 
-const db = require('../db.js')
-const database = db.database()
-
-// Add your routes here - above the module.exports line
-
-router.get('/test', (req, res) => {
-	const user = {
-		name: 'Test user',
-		email: 'test@test.test',
-		type: 'seller',
-		signupDate: new Date()
-	}
-
-	const setUser = database
-		.collection('users')
-		.doc(db.uuid())
-		.set(user)
-
-	return setUser.then(res => {
-		console.log('Set: ', res)
-	})
+router.all('*', (req, res, next) => {
+  req.session.data.loggedIn = req.user !== false && req.user !== undefined
+  req.session.data.errors = false
+  req.session.data.time = Date.now()
+  req.session.data.successFlash = false
+  req.session.data.fromCheck = false
+  req.session.data.fatalError = false
+  next()
 })
 
 module.exports = router

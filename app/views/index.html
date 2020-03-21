@@ -1,12 +1,18 @@
-{% extends "layout.html" %} {% block pageTitle %} Home page {% endblock %} {%
-block content %}
+{% extends "layout.html" %}
 
-<h1>Hello world</h1>
+{% block pageTitle %}
+    Home page
+{% endblock %}
 
-<form action="confirm">
-	<input type="text" name="test-key" />
+{% block content %}
 
-	<button type="submit">Submit</button>
-</form>
+    <h1>Hello world</h1>
+
+    {{ input({
+        name: 'testing',
+        label: 'Test'
+    }) }}
+
+    {{ icon('success-tick') }}
 
 {% endblock %}
